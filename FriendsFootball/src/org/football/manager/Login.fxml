@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="774.0" styleClass="pane_configs" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="org.football.manager.LoginController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="774.0" styleClass="pane_layout" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="org.football.manager.LoginController">
   <children>
     <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="398.0" StackPane.alignment="CENTER">
       <children>
         <GridPane alignment="CENTER" layoutX="1.0" layoutY="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="339.0" prefHeight="244.0" prefWidth="398.0" styleClass="gridpane_layout">
           <children>
-            <Button fx:id="login_button" focusTraversable="false" mnemonicParsing="false" onAction="#handleLoginButtonAction" prefHeight="25.0" prefWidth="81.0" text="Login" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
-            <Label contentDisplay="CENTER" prefHeight="25.0" prefWidth="145.0" text="Create new account." textAlignment="CENTER" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+            <Button fx:id="login_button" focusTraversable="false" mnemonicParsing="false" onAction="#handleLoginButtonAction" prefHeight="27.0" prefWidth="95.0" text="Login" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <Label contentDisplay="CENTER" prefHeight="25.0" prefWidth="164.0" text="Create new account." textAlignment="CENTER" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="5">
               <font>
                 <Font size="13.0" />
               </font>
@@ -39,7 +39,7 @@
                 </DisplacementMap>
               </effect>
             </PasswordField>
-            <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="122.5" text="Remember me" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
+            <CheckBox mnemonicParsing="false" prefHeight="17.0" prefWidth="134.0" text="Remember me" GridPane.halignment="LEFT" GridPane.rowIndex="4" />
             <Label contentDisplay="CENTER" prefHeight="25.0" prefWidth="183.0" text="Log-in to your account" textAlignment="CENTER">
               <font>
                 <Font size="16.0" />

@@ -1,0 +1,3 @@
+Database:
+
+	Text file with the explanation of the database's funcionalities.   

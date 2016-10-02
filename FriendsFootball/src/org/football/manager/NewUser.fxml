@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.*?>
 <?import java.net.*?>
 
-<StackPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="org.football.manager.NewUserController">
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.football.manager.NewUserController">
     <stylesheets>
     <URL value="@login.css" />
   </stylesheets>
@@ -30,6 +30,8 @@
                   <Label layoutX="16.0" layoutY="141.0" text="Password" />
                   <Label layoutX="268.0" layoutY="105.0" text="Telephone" />
                   <Label layoutX="15.0" layoutY="64.0" text="Nickname" />
+                  <Button layoutX="113.0" layoutY="213.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="114.0" text="Submit" />
+                  <Button layoutX="255.0" layoutY="213.0" mnemonicParsing="false" onAction="#handleCancelButtonAction" prefHeight="29.0" prefWidth="114.0" text="Cancel" />
                </children>
             </Pane>
          </children>

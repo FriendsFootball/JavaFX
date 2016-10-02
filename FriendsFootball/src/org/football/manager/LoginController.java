@@ -15,6 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.scene.control.Button;
 
 /**
  *
@@ -24,21 +25,30 @@ public class LoginController implements Initializable {
 
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
-        //openNextNewWindow();
+
     }
-    
+
     @FXML
     private void handleCreateAccountAction() {
         openNewUserWindow();
     }
-    
-    
+
     public void openNewUserWindow() {
         try {
             FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewUser.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
+
+            // METHOD 1
+            // # This methos allows to use the same stage and only change the scene.
+            // Way better in terms of transitions of environments.
+            // Declarar acima:     private Button login_button; login_button é o id no fxml
+            // Stage stage = (Stage) login_button.getScene().getWindow();
+            // METHOD 2 
+            // Stage stage = (Stage)((Node)(event.getSource())).getScene().getWindow();
+            // Tem que se ter ActionEvent event como argumento.
+            // METHOD 3
             Stage stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.initModality(Modality.APPLICATION_MODAL); // This new windows won't allow editing the window behind it (the one that created the new one).
             stage.setTitle("New User");
             stage.setScene(new Scene(root1));
             stage.show();

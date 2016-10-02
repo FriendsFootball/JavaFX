@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.*?>
+
+<StackPane prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8" fx:controller="org.football.manager.NewUserController">
+    <stylesheets>
+    <URL value="@login.css" />
+  </stylesheets>
+   <children>
+      <FlowPane prefHeight="200.0" prefWidth="200.0">
+         <children>
+            <Pane prefHeight="331.0" prefWidth="498.0">
+               <children>
+                  <TextField layoutX="80.0" layoutY="14.0" prefHeight="25.0" prefWidth="180.0" promptText="First name" />
+                  <TextField layoutX="268.0" layoutY="13.0" prefHeight="27.0" prefWidth="180.0" promptText="Surname" />
+                  <TextField layoutX="80.0" layoutY="60.0" prefHeight="25.0" prefWidth="180.0" promptText="luigi" />
+                  <DatePicker layoutX="334.0" layoutY="60.0" prefHeight="25.0" prefWidth="114.0" />
+                  <TextField layoutX="80.0" layoutY="101.0" prefHeight="25.0" prefWidth="180.0" promptText="\@" />
+                  <TextField layoutX="334.0" layoutY="101.0" prefHeight="25.0" prefWidth="114.0" promptText="+351 917 674 816" />
+                  <PasswordField layoutX="80.0" layoutY="137.0" prefHeight="25.0" prefWidth="180.0" promptText="*********" />
+                  <PasswordField layoutX="268.0" layoutY="137.0" prefHeight="25.0" prefWidth="180.0" promptText="Repeat password" />
+                  <Label layoutX="16.0" layoutY="18.0" text="Name" />
+                  <Label layoutX="268.0" layoutY="64.0" text="Birthday" />
+                  <Label layoutX="17.0" layoutY="105.0" text="Email" />
+                  <Label layoutX="16.0" layoutY="141.0" text="Password" />
+                  <Label layoutX="268.0" layoutY="105.0" text="Telephone" />
+                  <Label layoutX="15.0" layoutY="64.0" text="Nickname" />
+               </children>
+            </Pane>
+         </children>
+      </FlowPane>
+   </children>
+</StackPane>

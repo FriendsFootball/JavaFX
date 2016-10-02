@@ -9,14 +9,14 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="774.0" styleClass="pane_layout" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="org.football.manager.LoginController">
+<StackPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="523.0" prefWidth="774.0" styleClass="pane_layout" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.football.manager.LoginController">
   <children>
     <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="244.0" prefWidth="398.0" StackPane.alignment="CENTER">
       <children>
         <GridPane alignment="CENTER" layoutX="1.0" layoutY="0.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="200.0" minWidth="339.0" prefHeight="244.0" prefWidth="398.0" styleClass="gridpane_layout">
           <children>
             <Button fx:id="login_button" focusTraversable="false" mnemonicParsing="false" onAction="#handleLoginButtonAction" prefHeight="27.0" prefWidth="95.0" text="Login" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
-            <Label contentDisplay="CENTER" prefHeight="25.0" prefWidth="164.0" text="Create new account." textAlignment="CENTER" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="5">
+            <Label contentDisplay="CENTER" onMouseClicked="#handleCreateAccountAction" prefHeight="25.0" prefWidth="164.0" text="Create new account." textAlignment="CENTER" underline="true" GridPane.halignment="CENTER" GridPane.rowIndex="5">
               <font>
                 <Font size="13.0" />
               </font>

@@ -24,16 +24,22 @@ public class LoginController implements Initializable {
 
     @FXML
     private void handleLoginButtonAction(ActionEvent event) {
-        System.out.println("Ola");
+        //openNextNewWindow();
     }
-
-    public void openNextNewWindow() {
+    
+    @FXML
+    private void handleCreateAccountAction() {
+        openNewUserWindow();
+    }
+    
+    
+    public void openNewUserWindow() {
         try {
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Login.fxml"));
+            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("NewUser.fxml"));
             Parent root1 = (Parent) fxmlLoader.load();
             Stage stage = new Stage();
             stage.initModality(Modality.APPLICATION_MODAL);
-            stage.setTitle("ABC");
+            stage.setTitle("New User");
             stage.setScene(new Scene(root1));
             stage.show();
         } catch (Exception ex) {

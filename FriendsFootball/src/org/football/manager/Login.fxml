@@ -21,7 +21,7 @@
                 <Font size="13.0" />
               </font>
             </Label>
-            <TextField promptText="Email Address" GridPane.rowIndex="2">
+            <TextField fx:id="email_TextField" promptText="Email | Username" GridPane.rowIndex="2">
               <effect>
                 <DisplacementMap>
                   <mapData>
@@ -30,7 +30,7 @@
                 </DisplacementMap>
               </effect>
             </TextField>
-            <PasswordField prefHeight="-1.0" prefWidth="-1.0" promptText="Password" GridPane.rowIndex="3">
+            <PasswordField fx:id="password_PasswordField" prefHeight="-1.0" prefWidth="-1.0" promptText="Password" GridPane.rowIndex="3">
               <effect>
                 <DisplacementMap>
                   <mapData>

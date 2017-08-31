@@ -5,23 +5,24 @@
  */
 package org.football.manager;
 
-import java.net.URL;
+import java.io.IOException;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.time.ZoneId;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.control.DatePicker;
 import javafx.scene.image.Image;
 import org.framework.mysql.MySQL;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 
 public class UserInformationController implements Initializable {
 
@@ -34,8 +35,6 @@ public class UserInformationController implements Initializable {
     String username;
     String password;
 
-    // @FXML
-    //private ProgressBar progressBar;
     @FXML
     private TextField firstName;
 
@@ -60,6 +59,26 @@ public class UserInformationController implements Initializable {
     @FXML
     private TextField filePath_TextField;
 
+	@FXML
+	private boolean IsURLImageValid(String path_to_image)
+	{
+		URL u;
+		int code = 404;
+		try {
+			u = new URL( path_to_image);
+			HttpURLConnection huc =  ( HttpURLConnection )  u.openConnection (); 
+			huc.setRequestMethod("GET");
+			huc.connect(); 
+			code = huc.getResponseCode();
+		} catch (MalformedURLException ex) {
+			Logger.getLogger(UserInformationController.class.getName()).log(Level.SEVERE, null, ex);
+		} catch (IOException ex) {
+			Logger.getLogger(UserInformationController.class.getName()).log(Level.SEVERE, null, ex);
+		}
+		
+		return ((code == 200) ? true : false);
+	}
+	
     @FXML
     private void Refresh() {
         try {
@@ -80,8 +99,28 @@ public class UserInformationController implements Initializable {
                 email.setText(rs.getString("email"));
                 telephone.setText(rs.getString("telephone"));
 
-                Image image = (Image) new Image("http://lrocha3.no-ip.org/FriendsFootball/users/"+ rs.getString("id_player")+ ".jpg", true);
-                imageUser.setImage(image);
+				String path_to_image = "http://lrocha3.no-ip.org/FriendsFootball/users/" + rs.getString("id_player") + ".png";
+				if(IsURLImageValid(path_to_image) == true)
+				{
+					Image image = (Image) new Image(path_to_image, true);
+					imageUser.setImage(image);
+					System.out.println("PNG image Loaded");
+				}
+				else
+				{
+					path_to_image = "http://lrocha3.no-ip.org/FriendsFootball/users/" + rs.getString("id_player") + ".jpg";
+					if(IsURLImageValid(path_to_image) == true)
+					{
+						Image image = (Image) new Image(path_to_image, true);
+						imageUser.setImage(image);
+						System.out.println("Jpg image Loaded");
+
+					}
+					else
+					{
+						System.out.println("Error: User does not have an image associated.");
+					}
+				}
 
             }
         } catch (SQLException ex) {

@@ -36,9 +36,12 @@ public class NewUserController implements Initializable {
     String username;
     String password;
 
-    // @FXML
-    //private ProgressBar progressBar;
-    @FXML
+    /*
+	@FXML
+    private ProgressBar progressBar;
+    */
+	
+	@FXML
     private TextField firstName;
 
     @FXML
@@ -89,10 +92,13 @@ public class NewUserController implements Initializable {
 
     }
 
-//    void updateProgressBar(long value) {
-//        progressBar.setProgress(value);
-//    }
-    String getFileExtension(String filePath) {
+    /*
+	public void updateProgressBar(long value) {
+        progressBar.setProgress(value);
+    }
+    */
+	
+	String getFileExtension(String filePath) {
         //TODO no extensions files has to be rejected
         String extension = "";
 
@@ -126,13 +132,18 @@ public class NewUserController implements Initializable {
 
             String fileName = Long.toString(id);
 
-            sftp.put(filePath, "/var/www/html/FriendsFootball/users/" + fileName + "." + getFileExtension(file.getName()), new ProgressMonitor(this));
+			// Coomand to give set a folder accessible to an linux user (in this case dev): sudo setfacl -m u:dev:r FriendsFootball/
+            sftp.put(filePath, "/var/www/FriendsFootball/users/" + fileName + "." + getFileExtension(file.getName()), new ProgressMonitor(this));
 
             Boolean success = true;
 
             if (success) {
-                // The file has been uploaded succesfully
+	            System.out.println(" The file has been uploaded succesfully");
             }
+			else
+			{
+				System.out.println("Error: The file has not been uploaded succesfully");
+			}	
 
             channel.disconnect();
             session.disconnect();

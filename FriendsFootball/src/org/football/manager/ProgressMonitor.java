@@ -40,7 +40,7 @@ public class ProgressMonitor implements SftpProgressMonitor {
         if (percentNow > this.percent) {
             this.percent = percentNow;
             System.out.println(this.percent); // Progress 0,0
-           // newUser.updateProgressBar(this.percent);
+            //newUser.updateProgressBar(this.percent);
         }
 
         return (true);
